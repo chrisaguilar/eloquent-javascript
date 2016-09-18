@@ -1,9 +1,17 @@
+/*
 function isEven(number) {
   if (number < 0) return isEven(number + 2);
   else if (number == 0) return 'even';
   else if (number == 1) return 'odd';
   else return isEven(number - 2);
 }
+*/
+
+const isEven = number => 
+  number < 0 ? isEven(number + 2)
+  :(number == 0 ? 'even'
+  :(number == 1 ? 'odd'
+  :isEven(number - 2)));
 
 console.log(isEven(0));
 console.log(isEven(1));

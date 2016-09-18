@@ -4,6 +4,7 @@ let byName = {};
 ancestry.forEach(person => byName[person.name] = person);
 
 const average = arr => arr.reduce((a, b) => a + b) / arr.length;
+
 const averageDiff = arr => 
   average(
     arr
