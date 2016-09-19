@@ -1,3 +1,4 @@
+/*
 function arrayToList(arr) {
   var list = null;
   for (var i = arr.length-1; i >= 0; i--)
@@ -30,8 +31,37 @@ function nth(list, number) {
   else if (number == 0) return list.value;
   else return nth(list.rest, (number - 1));
 }
+*/
 
-var myBigList = {
+const arrayToList = arr => {
+  let list = null;
+  for (let i in arr)
+    list = {
+      value: arr[i],
+      rest: list
+    };
+  return list;
+};
+
+const listToArray = list => {
+  let arr = [];
+  while (list != null) {
+    arr.push(list.value);
+    list = list.rest;
+  }
+  return arr;
+};
+
+const prepend = (list, element) => list = {value: element, rest: list};
+
+const nth = (list, number) => 
+  list == undefined ? undefined :(
+    number == 0 ? list.value:
+    nth(list.rest, (number-1))
+  );
+
+
+let myBigList = {
   value: 1,
   rest: {
     value: 2,
