@@ -1,7 +1,7 @@
 const ancestry = JSON.parse(require('./ancestry'));
 
 let byName = {};
-ancestry.forEach(person => byName[person.name] = person);
+ancestry.forEach(p => byName[p.name] = p);
 
 const average = arr => arr.reduce((a, b) => a + b) / arr.length;
 
