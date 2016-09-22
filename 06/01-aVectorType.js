@@ -20,17 +20,11 @@ function Vector(x, y) {
 }
 
 Vector.prototype.plus = function (vector) {
-  return {
-    x: this.x + vector.x,
-    y: this.y + vector.y
-  }
+  return new Vector(this.x + vector.x, this.y + vector.y);
 };
 
 Vector.prototype.minus = function (vector) {
-  return {
-    x: this.x - vector.x,
-    y: this.y - vector.y
-  }
+  return new Vector(this.x - vector.x, this.y - vector.y);
 }
 
 var v1 = new Vector(20, 25);
