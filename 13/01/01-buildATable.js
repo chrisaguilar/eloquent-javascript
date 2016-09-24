@@ -26,6 +26,7 @@ function TextCell(text, type) {
 TextCell.prototype.makeCell = function() {
   let cell = document.createElement(`${this.type}`);
   cell.textContent = this.text;
+  cell.style.textAlign = typeof this.text == 'number' ? 'right' : 'left';
   return cell;
 }
 
