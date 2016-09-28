@@ -289,26 +289,18 @@ PlantEater.prototype.act = function(view) {
 
 var valley = new LifelikeWorld(
   ["############################",
-   "#####          O      ######",
-   "##   ***         O      **##",
-   "#   *##**         **     *##",
-   "#    ***          ##**    *#",
-   "#                 ##***    #",
+   "#####                 ######",
+   "##   ***                **##",
+   "#   *##**         **  O  *##",
+   "#    ***     O    ##**    *#",
+   "#       O         ##***    #",
    "#                 ##**     #",
-   "#           #*             #",
-   "#*          #**            #",
-   "#***********##**         **#",
-   "##**********###***********###",
+   "#   O       #*             #",
+   "#*          #**       O    #",
+   "#***        ##**    O    **#",
+   "##****     ###***       *###",
    "############################"],
   {"#": Wall,
    "O": PlantEater,
    "*": Plant}
 );
-
-var turns = 0;
-var myInterval = setInterval (() => {
-  if (turns == 200) clearInterval(myInterval);
-  valley.turn();
-  console.log(valley.toString());
-  turns++;
-}, 100);
